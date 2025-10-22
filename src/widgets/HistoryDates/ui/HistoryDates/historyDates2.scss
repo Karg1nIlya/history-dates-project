@@ -1,0 +1,218 @@
+.circle-timeline {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .circle-center {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        border: 2px solid #e0e0e0;
+
+        .category-info {
+            text-align: center;
+            padding: 20px;
+            max-width: 250px;
+
+            .category-title {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .date-info {
+                .date-year {
+                    font-size: 20px;
+                    color: #007bff;
+                    margin-bottom: 10px;
+                }
+
+                .date-text {
+                    font-size: 14px;
+                    color: #666;
+                    line-height: 1.4;
+                    margin-bottom: 15px;
+                }
+            }
+
+            .date-navigation {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+
+                .nav-button {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #ddd;
+                    background: white;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background: #007bff;
+                        color: white;
+                        border-color: #007bff;
+                    }
+                }
+
+                .date-counter {
+                    font-size: 12px;
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    .circle-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .circle-item {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            left: 50%;
+            top: 50%;
+            margin-left: -40px;
+            margin-top: -40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+            .item-content {
+                text-align: center;
+
+                .item-number {
+                    display: block;
+                    font-size: 12px;
+                    opacity: 0.7;
+                }
+
+                .item-title {
+                    display: block;
+                    font-size: 10px;
+                    font-weight: bold;
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+
+    .navigation-dots {
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.active {
+                background: #007bff;
+                transform: scale(1.2);
+            }
+
+            &:hover {
+                background: #007bff;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+    .circle-timeline {
+        width: 400px;
+        height: 400px;
+
+        .circle-center {
+            width: 200px;
+            height: 200px;
+
+            .category-info {
+                padding: 15px;
+                max-width: 180px;
+
+                .category-title {
+                    font-size: 18px;
+                }
+
+                .date-year {
+                    font-size: 16px;
+                }
+
+                .date-text {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .circle-container .circle-item {
+            width: 60px;
+            height: 60px;
+            margin-left: -30px;
+            margin-top: -30px;
+
+            .item-content .item-title {
+                font-size: 8px;
+            }
+        }
+    }
+}
+
+// Плавные переходы
+.circle-timeline {
+    * {
+        transition: all 0.3s ease;
+    }
+}
+
+// Анимация появления
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.category-info {
+    animation: fadeIn 0.5s ease;
+}

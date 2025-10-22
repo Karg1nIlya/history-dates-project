@@ -1,0 +1,22 @@
+.history-dates-change {
+    font-size: 200px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 67.5rem) {
+    .history-dates-change {
+        font-size: 150px;
+    }
+}
+
+@media screen and (max-width: 51rem) {
+    .history-dates-change {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 42.5rem) {
+    .history-dates-change {
+        font-size: 56px;
+    }
+}

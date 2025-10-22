@@ -1,0 +1,121 @@
+.history-date-slider {
+    padding: 0 5rem;
+    position: relative;
+    animation: opacitySlider .8s ease-in-out;
+}
+
+.history-date-slider__slide {
+    max-width: 400px;
+    min-width: 320px;
+    width: auto !important;
+    flex-shrink: 1 !important;
+}
+
+.history-date-slider__slide + .history-date-slider__slide {
+    margin-left: 5rem;
+}
+
+.history-date-slider__slide-name {
+    line-height: 120%;
+    color: blue;
+    margin-bottom: 15px;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.history-date-slider__slide-text {
+    line-height: 30px;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.history-date-slider__btn, .history-date-slider__btn--hidden {
+    position: absolute;
+    top: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-image: url("/public/assets/img/vector-slider.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5px 10px;
+    background-color: white;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.history-date-slider__prev-btn {
+    transform: translateY(-50%) rotate(180deg);
+    left: 20px;
+}
+
+.history-date-slider__next-btn {
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.history-date-slider__btn--hidden {
+    visibility: hidden;
+}
+
+@keyframes opacitySlider {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 51rem) {
+    .history-date-slider {
+        padding: 0 4rem;
+    }
+
+    .history-date-slider__prev-btn {
+        left: 15px;
+    }
+    
+    .history-date-slider__next-btn {
+        right: 15px;
+    }
+
+    .history-date-slider__slide + .history-date-slider__slide {
+        margin-left: 4rem;
+    }
+}
+
+@media screen and (max-width: 42.5rem) {
+    .history-date-slider {
+        padding: 0 1.25rem;
+    }
+
+    .history-date-slider__btn {
+        display: none;
+    }
+
+    .history-date-slider__slide {
+        max-width: 255px;
+        min-width: 166px;
+    }
+
+    .history-date-slider__slide + .history-date-slider__slide {
+        margin-left: 1.56rem;
+    }
+    
+    .history-date-slider__slide-name {
+        line-height: 120%;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+    
+    .history-date-slider__slide-text {
+        font-size: 14px;
+        line-height: 145%;
+    }
+}
